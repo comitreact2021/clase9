@@ -1,10 +1,10 @@
-function mostrarSelectProductos() {
-  const divContenido = document.getElementById('contenido');
+function mostrarSelect(items, idContainer) {
+  const divContenido = document.getElementById(idContainer);
 
   let htmlDelDiv = '<select>';
 
-  for (let producto of productos) {
-    htmlDelDiv += `<option value="${producto.id}">${producto.nombre}</option>`;
+  for (let item of items) {
+    htmlDelDiv += `<option value="${item.id}">${item.nombre}</option>`;
   }
 
   htmlDelDiv += '</select>';
@@ -12,18 +12,5 @@ function mostrarSelectProductos() {
   divContenido.innerHTML = htmlDelDiv;
 }
 
-function mostrarSelectClientes() {
-  const divContenido = document.getElementById('contenido');
-
-  let htmlDelDiv = '<select>';
-
-  for (let cliente of clientes) {
-    htmlDelDiv += `<option value="${cliente.id}">${cliente.nombre}</option>`;
-  }
-
-  htmlDelDiv += '</select>';
-
-  divContenido.innerHTML = htmlDelDiv;
-}
-
-mostrarSelectClientes();
+mostrarSelect(productos, 'productos-container');
+mostrarSelect(clientes, 'clientes-container');
