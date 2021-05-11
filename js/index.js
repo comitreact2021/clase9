@@ -1,3 +1,12 @@
+const btnCargar = document.getElementById('btn-cargar');
+
+btnCargar.addEventListener('click', cargarDatos);
+
+function cargarDatos() {
+  mostrarSelect(productos, 'productos-container');
+  mostrarSelect(clientes, 'clientes-container');
+}
+
 function mostrarSelect(items, idContainer) {
   const divContenido = document.getElementById(idContainer);
 
@@ -11,6 +20,3 @@ function mostrarSelect(items, idContainer) {
 
   divContenido.innerHTML = htmlDelDiv;
 }
-
-mostrarSelect(productos, 'productos-container');
-mostrarSelect(clientes, 'clientes-container');
