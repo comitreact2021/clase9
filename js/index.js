@@ -20,3 +20,17 @@ function mostrarSelect(items, idContainer) {
 
   divContenido.innerHTML = htmlDelDiv;
 }
+
+function cargarDatosDesdeJsonPlaceHolder() {
+  const promesa = fetch('https://jsonplaceholder.typicode.com/users');
+
+  promesa.then(function () {
+    console.log('Fin de la promesa');
+  });
+
+  console.log('ALGO');
+
+  console.log('Algo mas');
+}
+
+cargarDatosDesdeJsonPlaceHolder();
