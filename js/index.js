@@ -41,7 +41,22 @@ function cargarDatosDesdeJsonPlaceHolder() {
     });
 }
 
-cargarDatosDesdeJsonPlaceHolder();
+const cargarDatosDesdeJsonPlaceHolderAsync = async () => {
+  const url = 'https://jsonplaceholder.typicode.com/users';
+
+  const response = await fetch(url);
+  const dataJson = await response.json();
+
+  mostrarSelect(dataJson, 'users-container', 'name', 'users');
+};
+
+//cargarDatosDesdeJsonPlaceHolder();
+
+const promesa = cargarDatosDesdeJsonPlaceHolderAsync();
+
+promesa.then(() => {
+  console.log('Termino de cargar los datos');
+});
 
 console.log('Algo fuera de la funcion cargarDatos...');
 
