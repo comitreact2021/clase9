@@ -29,17 +29,14 @@ function cargarDatosDesdeJsonPlaceHolder() {
   const url = 'https://jsonplaceholder.typicode.com/users';
 
   fetch(url)
-    .then(function (response) {
-      console.log('Todo salio bien, llego la respuesta!!!');
-      return response.json();
-    })
-    .then(function (dataJson) {
+    .then((response) => response.json())
+    .then((dataJson) => {
       mostrarSelect(dataJson, 'users-container', 'name', 'users');
     })
-    .catch(function () {
+    .catch(() => {
       console.log('Algo salio mal!!!');
     })
-    .finally(function () {
+    .finally(() => {
       console.log('La promesa termino');
     });
 }
@@ -47,3 +44,19 @@ function cargarDatosDesdeJsonPlaceHolder() {
 cargarDatosDesdeJsonPlaceHolder();
 
 console.log('Algo fuera de la funcion cargarDatos...');
+
+/*function sumar(a, b) {
+  return a + b;
+}
+
+const sumar = function (a, b) {
+  return a + b;
+};*/
+
+const sumar = (a, b) => {
+  return a + b;
+};
+
+const saludar = (saludo) => saludo + '!';
+
+console.log(saludar('Hola'));
